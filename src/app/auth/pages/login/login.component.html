@@ -1,0 +1,13 @@
+<form [formGroup]="formLogin" (ngSubmit)="saveLogin()">
+  <mat-form-field appearance="legacy">
+    <mat-label>Username</mat-label>
+    <input matInput placeholder="Placeholder" />
+  </mat-form-field>
+
+  <mat-form-field appearance="legacy">
+    <mat-label>Password</mat-label>
+    <input matInput placeholder="password" type="password" />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Login</button>
+</form>

@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core'
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChange,
+} from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 
 @Component({
@@ -8,7 +14,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class LoginComponent implements OnInit {
   formLogin: FormGroup
-
+  @Input() input = ''
   constructor() {
     this.formLogin = new FormGroup({
       username: new FormControl('', [
@@ -29,6 +35,18 @@ export class LoginComponent implements OnInit {
     if (this.formLogin.status) {
       console.log('formulario incompleto')
     } else console.log('Formulario completo')
+  }
+
+  ChangesInput(e: any) {
+    console.log(e)
+  }
+
+  ngOnChangeInput2(e: SimpleChange) {
+    console.log('input2', e)
+  }
+
+  ngOnChangeTest(e: OnChanges) {
+    console.log(e)
   }
 
   ngOnInit(): void {}

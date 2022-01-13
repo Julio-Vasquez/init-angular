@@ -1,7 +1,12 @@
 <form [formGroup]="formLogin" (ngSubmit)="saveLogin()">
   <mat-form-field appearance="legacy">
     <mat-label>Username</mat-label>
-    <input matInput placeholder="Placeholder" />
+    <input
+      matInput
+      [value]="input"
+      placeholder="Placeholder"
+      (change)="ChangesInput($event)"
+    />
   </mat-form-field>
 
   <mat-form-field appearance="legacy">
